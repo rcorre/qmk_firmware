@@ -1,0 +1,3 @@
+SERIAL_DRIVER = usart
+SERIAL_DRIVER = vendor
+CONSOLE_ENABLE = yes
