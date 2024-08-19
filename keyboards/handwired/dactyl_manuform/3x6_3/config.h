@@ -8,7 +8,10 @@
 #define SERIAL_PIO_USE_PIO0
 #define SERIAL_USART_TIMEOUT 100 // USART driver timeout. default 100
 #define SERIAL_USART_SPEED 921600
-#define SERIAL_USART_PIN_SWAP
+
+// D+/D- are wired to GP0/GP1 on the left half, and reversed on the right.
+// If they are wired to the same GP pins on both sides, define SERIAL_USART_PIN_SWAP.
+// #define SERIAL_USART_PIN_SWAP
 
 #define MASTER_LEFT
 
