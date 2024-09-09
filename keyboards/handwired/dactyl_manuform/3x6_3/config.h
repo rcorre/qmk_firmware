@@ -21,3 +21,18 @@
 
 // This makes it easier for fast typists to use dual-function keys
 #define PERMISSIVE_HOLD
+
+// Trackball
+#define SPLIT_POINTING_ENABLE
+#define ROTATIONAL_TRANSFORM_ANGLE  -25
+#define POINTING_DEVICE_INVERT_Y
+#define POINTING_DEVICE_RIGHT
+#define POINTING_DEVICE_TASK_THROTTLE_MS 1
+#define PMW33XX_LIFTOFF_DISTANCE 0x02
+
+#define SPI_DRIVER SPID1
+
+#define PMW33XX_CS_PIN GP29
+#define SPI_SCK_PIN GP28
+#define SPI_MOSI_PIN GP27
+#define SPI_MISO_PIN GP26
