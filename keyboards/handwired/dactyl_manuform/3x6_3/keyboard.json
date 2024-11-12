@@ -10,7 +10,8 @@
         "console": true,
         "extrakey": true,
         "mousekey": true,
-        "nkro": true
+        "nkro": true,
+        "caps_word": true
     },
     "matrix_pins": {
         "cols": ["GP4","GP5","GP6", "GP7", "GP8", "GP9"],
@@ -74,9 +75,9 @@
                 {"label": "L32", "matrix": [3, 4], "x": 6, "y": 3},
                 {"label": "L33", "matrix": [3, 5], "x": 7, "y": 3},
 
-                {"label": "R31", "matrix": [7, 1], "x": 9, "y": 3},
-                {"label": "R32", "matrix": [7, 2], "x": 10, "y": 3},
-                {"label": "R33", "matrix": [7, 3], "x": 11, "y": 3}
+                {"label": "R31", "matrix": [7, 3], "x": 9, "y": 3},
+                {"label": "R32", "matrix": [7, 4], "x": 10, "y": 3},
+                {"label": "R33", "matrix": [7, 5], "x": 11, "y": 3}
             ]
         }
     }
