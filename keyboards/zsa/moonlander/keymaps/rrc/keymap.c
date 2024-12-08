@@ -18,10 +18,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LYR_BSE] = LAYOUT_moonlander(
     TG(LYR_GAM),          KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           RGB_TOG,                                        TOGGLE_LAYER_COLOR,KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           TG(5),          
     _______, KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_PAGE_UP,                                     LSFT(KC_INSERT),KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_PIPE,        
-    KC_ESCAPE,      MT(MOD_LALT, KC_A),MT(MOD_LGUI, KC_S),MT(MOD_LCTL, KC_D),MT(MOD_LSFT, KC_F),KC_G,           KC_PGDN,                                                                        KC_DELETE,      KC_H,           MT(MOD_RSFT, KC_J),MT(MOD_RCTL, KC_K),MT(MOD_RGUI, KC_L),MT(MOD_RALT, KC_SCLN),KC_QUOTE,       
+    KC_ESCAPE,      LALT_T(KC_A),LGUI_T(KC_S),LCTL_T(KC_D),LSFT_T(KC_F),KC_G,           KC_PGDN,                                                                        KC_DELETE,      KC_H,           RSFT_T(KC_J),RCTL_T(KC_K),RGUI_T(KC_L),RALT_T(KC_SCLN),KC_QUOTE,       
     KC_LEFT_SHIFT,  KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RIGHT_SHIFT, 
-    _______, _______, _______, LT(3,KC_LEFT),  LT(4,KC_RIGHT), KC_LEFT_GUI,                                                                                                    MT(MOD_RGUI, KC_TAB),KC_UP,          KC_DOWN,        _______, _______, _______, 
-    KC_SPACE,       MT(MOD_LCTL, KC_TAB),MO(5),                          KC_TAB,         KC_BSPC,        LT(2,KC_ENTER)
+    _______, _______, _______, LT(3,KC_LEFT),  LT(4,KC_RIGHT), KC_LEFT_GUI,                                                                                                    RGUI_T(KC_TAB),KC_UP,          KC_DOWN,        _______, _______, _______, 
+    KC_SPACE,       LCTL_T(KC_TAB),MO(5),                          KC_TAB,         KC_BSPC,        LT(2,KC_ENTER)
   ),
   [LYR_GAM] = LAYOUT_moonlander(
     _______, _______, _______, _______, _______, _______, QK_BOOT,                                 _______, _______, _______, _______, _______, _______, _______, 
