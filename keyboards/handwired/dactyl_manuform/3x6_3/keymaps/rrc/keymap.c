@@ -3,6 +3,10 @@
 
 #include QMK_KEYBOARD_H
 
+#define LYR_BSE 0
+#define LYR_SYM 1
+#define LYR_NAV 2
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
@@ -20,10 +24,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       */
 
     [0] = LAYOUT_split_3x6_3(
-        KC_TAB,  KC_Q,         KC_W,         KC_E,         KC_R,             KC_T,             KC_Y,          KC_U,            KC_I,          KC_O,         KC_P,            KC_PIPE,
-        KC_ESC,  LALT_T(KC_A), RGUI_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F),     KC_G,             KC_H,          RSFT_T(KC_J),    RCTL_T(KC_K),  RGUI_T(KC_L), RALT_T(KC_SCLN), KC_QUOT,
-        KC_LSFT, KC_Z,         KC_X,         KC_C,         KC_V,             KC_B,             KC_N,          KC_M,            KC_COMM,       KC_DOT,       KC_SLSH,         KC_RSFT,
-                                             KC_SPC,       LGUI_T(KC_TAB),   KC_LGUI,          LT(1, KC_ENT), LT(2, KC_BSPC),  KC_ESC
+        KC_TAB,  KC_Q,         KC_W,         KC_E,         KC_R,                  KC_T,             KC_Y,          KC_U,            KC_I,          KC_O,         KC_P,            KC_PIPE,
+        KC_ESC,  LALT_T(KC_A), RGUI_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F),          KC_G,             KC_H,          RSFT_T(KC_J),    RCTL_T(KC_K),  RGUI_T(KC_L), RALT_T(KC_SCLN), KC_QUOT,
+        KC_LSFT, KC_Z,         KC_X,         KC_C,         KC_V,                  KC_B,             KC_N,          KC_M,            KC_COMM,       KC_DOT,       KC_SLSH,         KC_RSFT,
+                                             KC_SPC,       LT(LYR_NAV, KC_TAB),   KC_ESC,           LT(1, KC_ENT), KC_BSPC,         KC_ESC
     ),
 
     // Symbols/Numbers
@@ -37,9 +41,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Nav
     [2] = LAYOUT_split_3x6_3(
          _______, KC_WH_D, KC_MS_U, KC_WH_U,    _______,    _______,                           _______, _______, _______, _______, _______, QK_BOOT,
-         _______, KC_MS_L, KC_MS_D, KC_MS_R,    _______,    KC_DEL ,                           KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
+         _______, KC_MS_L, KC_MS_D, KC_MS_R,    _______,    KC_DEL,                            KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
          _______, _______, _______, _______,    _______,    _______,                           _______, _______, _______, _______, _______, _______,
-                                    KC_MS_BTN1, KC_MS_BTN2, _______,                           _______, _______, _______
+                                    KC_MS_BTN1, KC_MS_BTN2, _______,                           KC_MS_BTN1, KC_MS_BTN2, _______
     ),
 
 };
