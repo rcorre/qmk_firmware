@@ -22,9 +22,11 @@
 // This makes it easier for fast typists to use dual-function keys
 #define PERMISSIVE_HOLD
 
+// #define CHORDAL_HOLD
+
 // Trackball
 #define SPLIT_POINTING_ENABLE
-#define ROTATIONAL_TRANSFORM_ANGLE  -25
+#define ROTATIONAL_TRANSFORM_ANGLE -25
 #define POINTING_DEVICE_INVERT_Y
 #define POINTING_DEVICE_RIGHT
 #define POINTING_DEVICE_TASK_THROTTLE_MS 1
