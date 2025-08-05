@@ -1,3 +1,4 @@
+#include "keycodes.h"
 #include "moonlander.h"
 #include QMK_KEYBOARD_H
 #include "version.h"
@@ -10,59 +11,74 @@
 #define LYR_NAV 3
 #define LYR_NUM 4
 #define LYR_FUN 5
+#define LYR_NMP 6
 
 enum custom_keycodes {
-  RGB_SLD = ML_SAFE_RANGE,
+    RGB_SLD = ML_SAFE_RANGE,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [LYR_BSE] = LAYOUT_moonlander(
-    TG(LYR_GAM), KC_1,          KC_2,         KC_3,         KC_4,          KC_5,           RGB_TOG,             TOGGLE_LAYER_COLOR, KC_6,    KC_7,          KC_8,         KC_9,         KC_0,            TG(LYR_GAM), 
-    _______,     KC_Q,          KC_W,         KC_E,         KC_R,          KC_T,           KC_PAGE_UP,          LSFT(KC_INSERT),    KC_Y,    KC_U,          KC_I,         KC_O,         KC_P,            KC_PIPE,     
-    KC_ESCAPE,   LALT_T(KC_A),  LGUI_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F),  KC_G,           KC_PGDN,             KC_DELETE,          KC_H,    RSFT_T(KC_J),  RCTL_T(KC_K), RGUI_T(KC_L), RALT_T(KC_SCLN), KC_QUOTE,    
-                 KC_LEFT_SHIFT, KC_Z,         KC_X,         KC_C,          KC_V,           KC_B,                KC_N,               KC_M,    KC_COMMA,      KC_DOT,       KC_SLASH,     KC_RIGHT_SHIFT,               
-                 KC_LEFT_ALT,   _______,      _______,      LT(3,KC_LEFT), LT(4,KC_RIGHT), KC_LEFT_GUI,         RGUI_T(KC_TAB),     KC_UP,   KC_DOWN,       _______,      _______,      KC_RIGHT_ALT,                 
-                                                            KC_SPACE,      LCTL_T(KC_TAB), MO(5),               KC_TAB,             KC_BSPC, LT(2,KC_ENTER)                                                           
-  ),
-  [LYR_GAM] = LAYOUT_moonlander(
-    _______,   _______,       _______, _______, _______,  _______,      QK_BOOT,             _______, _______, _______, _______, _______, _______, _______, 
-    KC_TAB,    _______,       KC_W,    _______, _______,  _______,      _______,             _______, _______, _______, _______, _______, _______, _______, 
-    KC_ESCAPE, KC_A,          KC_S,    KC_D,    KC_F,     _______,      _______,             _______, _______, _______, _______, _______, _______, _______, 
-               KC_LEFT_SHIFT, _______, _______, _______,  _______,      _______,             _______, _______, _______, _______, _______, _______,          
-               KC_LEFT_ALT,   _______, _______, _______,  _______,      _______,             _______, _______, _______, _______, _______, _______,          
-                                                KC_SPACE, KC_LEFT_CTRL, MO(LYR_FUN),         _______, _______, _______                                      
-  ),
-  [LYR_SYM] = LAYOUT_moonlander(
-    _______, _______, _______, _______, _______,           _______,         _______,         _______, _______,          _______,            _______,  _______, _______, _______,  
-    _______, KC_1,    KC_2,    KC_3,    KC_4,              KC_5,            _______,         _______, KC_6,             KC_7,               KC_8,     KC_9,    KC_0,    _______,  
-    _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN,           KC_EQUAL,        _______,         _______, KC_TILD,          KC_UNDS,            KC_MINUS, KC_ASTR, KC_AMPR, KC_GRAVE, 
-             KC_LCBR, KC_PERC, KC_CIRC, KC_LBRC,           KC_RBRC,         KC_PLUS,         KC_AT,   KC_EXLM,          _______,            _______,  KC_BSLS, KC_RCBR,           
-             _______, _______, _______, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, _______,         _______, KC_BRIGHTNESS_UP, KC_BRIGHTNESS_DOWN, _______,  _______, _______,           
-                                        _______,           CW_TOGG,         _______,         _______, _______,          _______                                                   
-  ),
-  [LYR_NAV] = LAYOUT_moonlander(
-    _______, _______,       _______,    _______,     _______,    _______,    _______,            _______,    _______,    _______,             _______,             _______, _______, QK_BOOT, 
-    _______, KC_MS_WH_DOWN, KC_MS_UP,   KC_MS_WH_UP, _______,    _______,    _______,            _______,    _______,    _______,             _______,             _______, _______, _______, 
-    _______, KC_MS_LEFT,    KC_MS_DOWN, KC_MS_RIGHT, _______,    _______,    _______,            _______,    _______,    KC_MS_BTN1,          KC_MS_BTN2,          _______, _______, _______, 
-             _______,       _______,    _______,     _______,    _______,    _______,            _______,    _______,    KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK, _______, _______,          
-             _______,       _______,    _______,     _______,    _______,    _______,            _______,    _______,    KC_AUDIO_VOL_DOWN,   KC_AUDIO_MUTE,       _______, _______,          
-                                                     KC_MS_BTN1, KC_MS_BTN2, KC_MS_BTN3,         KC_MS_BTN3, KC_MS_BTN2, KC_MS_BTN1                                                           
-  ),
-  [LYR_NUM] = LAYOUT_moonlander(
-    _______, _______,   _______, _______, _______, _______, _______,         _______, _______, KC_SLASH, KC_ASTR, KC_MINUS, _______, _______, 
-    _______, KC_KP_7,   KC_KP_8, KC_KP_9, _______, _______, _______,         _______, _______, KC_7,     KC_8,    KC_9,     _______, _______, 
-    KC_KP_0, KC_KP_4,   KC_KP_5, KC_KP_6, _______, _______, _______,         _______, KC_0,    KC_4,     KC_5,    KC_6,     KC_PLUS, _______, 
-             KC_KP_DOT, KC_KP_1, KC_KP_2, KC_KP_3, _______, _______,         _______, KC_1,    KC_2,     KC_3,    KC_ENTER, _______,          
-             _______,   _______, _______, _______, _______, _______,         _______, _______, _______,  KC_DOT,  _______,  _______,          
-                                          _______, _______, _______,         _______, _______, _______                                        
-  ),
-  [LYR_FUN] = LAYOUT_moonlander(
-    _______, _______, _______, _______, _______, _______, _______,         _______, _______, _______, _______, _______, _______, _______, 
-    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,         _______, _______, _______, _______, _______, _______, _______, 
-    _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,         _______, _______, _______, _______, _______, _______, _______, 
-             _______, KC_F11,  KC_F12,  _______, _______, _______,         _______, _______, _______, _______, _______, _______,          
-             _______, _______, _______, _______, _______, _______,         _______, _______, _______, _______, _______, _______,          
-                                        _______, _______, _______,         _______, _______, _______                                      
+    [LYR_BSE] = LAYOUT_moonlander(
+        _______, KC_1,         KC_2,         KC_3,         KC_4,                KC_5,                RGB_TOG,                     _______, KC_6,                 KC_7,               KC_8,         KC_9,         KC_0,            TG(LYR_GAM),
+        KC_TAB,  KC_Q,         KC_W,         KC_E,         KC_R,                KC_T,                _______,                     _______, KC_Y,                 KC_U,               KC_I,         KC_O,         KC_P,            KC_PIPE,
+        KC_ESC,  LALT_T(KC_A), RGUI_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F),        KC_G,                _______,                     _______, KC_H,                 RSFT_T(KC_J),       RCTL_T(KC_K), RGUI_T(KC_L), RALT_T(KC_SCLN), KC_QUOT,
+                 KC_LSFT,      KC_Z,         KC_X,         KC_C,                KC_V,                KC_B,                        KC_N,    KC_M,                 KC_COMM,            KC_DOT,       KC_SLSH,      KC_RSFT,
+                 KC_LALT,      _______,      _______,      LT(LYR_NMP,KC_LEFT), KC_RGHT,             KC_LGUI,                     KC_RGUI, KC_UP,                KC_DOWN,            _______,      _______,      _______,
+                                                           KC_SPC,              LT(LYR_NAV, KC_TAB), LT(LYR_FUN, KC_ESC),         KC_ESC,  LT(LYR_NUM, KC_BSPC), LT(LYR_SYM, KC_ENT)
+    ),
+
+    [LYR_GAM] = LAYOUT_moonlander(
+        KC_ESC, _______, _______, _______, _______, _______, _______,             _______,             _______, _______, _______, _______, _______, _______,
+        KC_TAB, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    _______,             _______,             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_PIPE,
+        KC_ESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    _______,             _______,             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+                KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                KC_N,                KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+                KC_LALT, _______, _______, _______, KC_LEFT, KC_RGHT,             _______,             _______, _______, _______, _______, _______,
+                                           KC_SPC,  KC_LCTL, MO(LYR_FUN),         LT(LYR_SYM, KC_ENT), KC_BSPC, KC_ESC
+    ),
+
+    [LYR_SYM] = LAYOUT_moonlander(
+        _______, _______, _______,   _______, _______, _______, _______,         _______, _______, _______, _______,  _______, _______, _______,
+        KC_TAB,  _______, _______,   KC_LCBR, KC_RCBR, _______, _______,         _______, _______, _______, KC_DQUO,  KC_GRV,  _______, KC_PIPE,
+        KC_PIPE, KC_HASH, KC_DOLLAR, KC_LPRN, KC_RPRN, KC_EQL,  _______,         _______, KC_TILD, KC_UNDS, KC_MINUS, KC_ASTR, KC_AMPR, KC_GRV,
+                 KC_LCBR, KC_PERC,   KC_CIRC, KC_LBRC, KC_RBRC, KC_PLUS,         KC_AT,   KC_EXLM, KC_COMM, KC_QUOT,  KC_BSLS, KC_RCBR,
+                 _______, _______,   _______, _______, _______, _______,         _______, _______, _______, _______,  _______, _______,
+                                              _______, CW_TOGG, _______,         _______, _______, _______
+    ),
+
+    [LYR_NUM] = LAYOUT_moonlander(
+        _______, _______, _______, _______, _______, _______, _______,         _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______,         _______, _______, _______, _______, _______, _______, _______,
+        _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______,         _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
+                 _______, _______, _______, _______, KC_MINS, KC_PLUS,         _______, _______, _______, _______, _______, _______,
+                 _______, _______, _______, _______, _______, _______,         _______, _______, _______, _______, _______, _______,
+                                            _______, _______, _______,         _______, _______, _______
+    ),
+
+    [LYR_NAV] = LAYOUT_moonlander(
+        _______, _______, _______, _______, _______,    _______,    _______,         _______,    _______,    _______, _______, _______, _______, _______,
+        _______, KC_WH_D, KC_MS_U, KC_WH_U, _______,    QK_BOOT,    _______,         _______,    _______,    _______, _______, _______, _______, QK_BOOT,
+        _______, KC_MS_L, KC_MS_D, KC_MS_R, _______,    KC_DEL,     _______,         _______,    KC_LEFT,    KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
+                 _______, _______, _______, _______,    KC_BRID,    KC_BRIU,         _______,    _______,    _______, _______, _______, _______,
+                 _______, _______, _______, _______,    _______,    _______,         _______,    _______,    _______, _______, _______, _______,
+                                            KC_MS_BTN1, KC_MS_BTN2, _______,         KC_MS_BTN1, KC_MS_BTN2, _______
+    ),
+
+    [LYR_FUN] = LAYOUT_moonlander(
+        _______, _______, _______, _______, _______, _______,     _______,         _______, _______, _______, _______, _______, _______, _______,
+        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   TG(LYR_GAM), _______,         _______, _______, _______, _______, _______, _______, _______,
+        _______, KC_F5,   KC_F6,   KC_F7,   KC_F8,   _______,     _______,         _______, _______, _______, _______, _______, _______, _______,
+                 _______, KC_F9,   KC_F10,  KC_F11,  KC_F12,      _______,         _______, _______, _______, _______, _______, _______,
+                 _______, _______, _______, _______, _______,     _______,         _______, _______, _______, _______, _______, _______,
+                                            _______, _______,     _______,         _______, _______, _______
+    ),
+
+  [LYR_NMP] = LAYOUT_moonlander(
+    _______, _______,   _______, _______, _______, _______, _______,         _______, _______, KC_SLASH, KC_ASTR, KC_MINUS, _______, _______,
+    _______, KC_KP_7,   KC_KP_8, KC_KP_9, _______, _______, _______,         _______, _______, KC_7,     KC_8,    KC_9,     _______, _______,
+    KC_KP_0, KC_KP_4,   KC_KP_5, KC_KP_6, _______, _______, _______,         _______, KC_0,    KC_4,     KC_5,    KC_6,     KC_PLUS, _______,
+             KC_KP_DOT, KC_KP_1, KC_KP_2, KC_KP_3, _______, _______,         _______, KC_1,    KC_2,     KC_3,    KC_ENTER, _______,
+             _______,   _______, _______, _______, _______, _______,         _______, _______, _______,  KC_DOT,  _______,  _______,
+                                          _______, _______, _______,         _______, _______, _______
   ),
 };
 
@@ -180,3 +196,4 @@ bool caps_word_press_user(uint16_t keycode) {
             return false; // Deactivate Caps Word.
     }
 }
+
