@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,         KC_W,         KC_E,         KC_R,                KC_T,                _______,                     _______, KC_Y,                 KC_U,               KC_I,         KC_O,         KC_P,            KC_PIPE,
         KC_ESC,  LALT_T(KC_A), RGUI_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F),        KC_G,                _______,                     _______, KC_H,                 RSFT_T(KC_J),       RCTL_T(KC_K), RGUI_T(KC_L), RALT_T(KC_SCLN), KC_QUOT,
                  KC_LSFT,      KC_Z,         KC_X,         KC_C,                KC_V,                KC_B,                        KC_N,    KC_M,                 KC_COMM,            KC_DOT,       KC_SLSH,      KC_RSFT,
-                 KC_LALT,      _______,      _______,      LT(LYR_NMP,KC_LEFT), KC_RGHT,             KC_LGUI,                     KC_RGUI, KC_UP,                KC_DOWN,            _______,      _______,      _______,
+                 KC_LALT,      _______,      _______,      LT(LYR_NAV,KC_LEFT), LT(LYR_NMP,KC_LEFT), KC_LGUI,                     KC_RGUI, KC_UP,                KC_DOWN,            _______,      _______,      _______,
                                                            KC_SPC,              LT(LYR_NAV, KC_TAB), LT(LYR_FUN, KC_ESC),         KC_ESC,  LT(LYR_NUM, KC_BSPC), LT(LYR_SYM, KC_ENT)
     ),
 
@@ -72,14 +72,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             _______, _______,     _______,         _______, _______, _______
     ),
 
-  [LYR_NMP] = LAYOUT_moonlander(
-    _______, _______,   _______, _______, _______, _______, _______,         _______, _______, KC_SLASH, KC_ASTR, KC_MINUS, _______, _______,
-    _______, KC_KP_7,   KC_KP_8, KC_KP_9, _______, _______, _______,         _______, _______, KC_7,     KC_8,    KC_9,     _______, _______,
-    KC_KP_0, KC_KP_4,   KC_KP_5, KC_KP_6, _______, _______, _______,         _______, KC_0,    KC_4,     KC_5,    KC_6,     KC_PLUS, _______,
-             KC_KP_DOT, KC_KP_1, KC_KP_2, KC_KP_3, _______, _______,         _______, KC_1,    KC_2,     KC_3,    KC_ENTER, _______,
-             _______,   _______, _______, _______, _______, _______,         _______, _______, _______,  KC_DOT,  _______,  _______,
-                                          _______, _______, _______,         _______, _______, _______
-  ),
+    [LYR_NMP] = LAYOUT_moonlander(
+        _______, _______,   _______, _______, _______, _______, _______,         _______, _______, KC_SLASH, KC_ASTR, KC_MINUS, _______, _______,
+        _______, KC_KP_7,   KC_KP_8, KC_KP_9, _______, _______, _______,         _______, _______, KC_7,     KC_8,    KC_9,     _______, _______,
+        KC_KP_0, KC_KP_4,   KC_KP_5, KC_KP_6, _______, _______, _______,         _______, KC_0,    KC_4,     KC_5,    KC_6,     KC_PLUS, _______,
+                 KC_KP_DOT, KC_KP_1, KC_KP_2, KC_KP_3, _______, _______,         _______, KC_1,    KC_2,     KC_3,    KC_ENTER, _______,
+                 _______,   _______, _______, _______, _______, _______,         _______, _______, _______,  KC_DOT,  _______,  _______,
+                                              _______, _______, _______,         _______, _______, _______
+    ),
 };
 
 static bool was_transport_connected = true;
